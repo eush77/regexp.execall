@@ -1,6 +1,6 @@
 {
   "name": "regexp.execall",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Apply RegExp.exec recursively. Missing part of the standard RegExp interface",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
