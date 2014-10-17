@@ -44,3 +44,33 @@ describe('for a global regexp', function () {
     execAll(/(x)(x)/g, input).should.eql([]);
   });
 });
+
+
+describe('prototype extension', function () {
+  beforeEach(function () {
+    delete RegExp.prototype.execAll;
+  });
+
+  var testPrototype = function () {
+    /(.)(.)/.execAll(input).should.eql(execAll(/(.)(.)/, input));
+    /(x)(x)/.execAll(input).should.eql(execAll(/(x)(x)/, input));
+    /(.)(.)/g.execAll(input).should.eql(execAll(/(.)(.)/g, input));
+    /(x)(x)/g.execAll(input).should.eql(execAll(/(x)(x)/g, input));
+  };
+
+  it('should work with manual assignment', function () {
+    RegExp.prototype.should.not.have.property('execAll');
+    RegExp.prototype.execAll = execAll;
+    testPrototype();
+  });
+
+  it('should work with extendRegExp()', function () {
+    RegExp.prototype.should.not.have.property('execAll');
+    execAll.extendRegExp();
+    testPrototype();
+  });
+
+  it('should return execAll itself from extendRegExp()', function () {
+    execAll.extendRegExp().should.equal(execAll);
+  });
+});

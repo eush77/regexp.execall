@@ -1,7 +1,12 @@
 'use strict';
 
 
-module.exports = function (regexp, string) {
+module.exports = exports = function (regexp, string) {
+  if (this instanceof RegExp) {
+    string = regexp;
+    regexp = this;
+  }
+
   var match;
 
   if (!regexp.global) {
@@ -16,4 +21,9 @@ module.exports = function (regexp, string) {
   }
 
   return matches;
+};
+
+
+exports.extendRegExp = function () {
+  return RegExp.prototype.execAll = this;
 };
