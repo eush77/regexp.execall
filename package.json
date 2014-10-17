@@ -1,0 +1,26 @@
+{
+  "name": "regexp.execall",
+  "version": "0.0.0",
+  "description": "Apply RegExp.exec recursively",
+  "author": "Eugene Sharygin <eush77@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/eush77/regexp.execall",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eush77/regexp.execall"
+  },
+  "bugs": {
+    "url": "https://github.com/eush77/regexp.execall/issues"
+  },
+  "keywords": [
+    "regex",
+    "regexp",
+    "re",
+    "regular",
+    "expression",
+    "exec",
+    "recursively"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
