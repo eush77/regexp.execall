@@ -4,6 +4,9 @@
   "description": "Apply RegExp.exec recursively",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "mocha --require should test"
+  },
   "homepage": "https://github.com/eush77/regexp.execall",
   "repository": {
     "type": "git",
@@ -22,5 +25,8 @@
     "recursively"
   ],
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "^1.21.5",
+    "should": "^4.0.4"
+  }
 }

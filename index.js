@@ -2,14 +2,14 @@
 
 
 module.exports = function (regexp, string) {
-  var matches = [];
+  var match;
 
   if (!regexp.global) {
-    return [regexp.exec(string)];
+    match = regexp.exec(string);
+    return match ? [match] : [];
   }
 
-  var matches = []
-    , match;
+  var matches = [];
 
   while (match = regexp.exec(string)) {
     matches.push(match);
