@@ -21,7 +21,7 @@ while ((match = regexp.exec(string)) != null) {
 }
 ```
 
-Can be used either as a separate function or a `RegExp`'s prototype extension. For the latter purpose, both these variant work:
+Can be used either as a separate function or a `RegExp`'s prototype extension. For the latter purpose, both these variants work:
 
 ```js
 RegExp.prototype.execAll = execAll;
@@ -43,7 +43,7 @@ execAll(/regexp/, 'string');
 
 If `execAll` is called in the context of a `RegExp`, it will use it as a `regexp`.
 
-Returns an array of matches in the format of a built-in `exec`. If `regexp` is non-global, the returning array contains either one or zero elements.
+Returns an array of matches in the format of the built-in `exec`. If `regexp` is non-global, the returning array contains either one or zero elements.
 
 ### execAll.extendRegExp()
 
