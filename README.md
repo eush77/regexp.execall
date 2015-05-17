@@ -7,7 +7,7 @@
 [david-badge]: https://david-dm.org/eush77/regexp.execall.png
 [david]: https://david-dm.org/eush77/regexp.execall
 
-Applies `RegExp.exec` recursively. Returns array of matches. Can be used either as a separate function or a `RegExp` prototype extension.
+Applies `RegExp.exec` iteratively. Returns array of matches. Can be used either as a separate function or a `RegExp` prototype extension.
 
 ## Example
 
@@ -25,7 +25,7 @@ execAll(/\w+/g, 'foo bar');
 
 If `execAll` is called in the context of a `RegExp`, it will use it as a `regexp`.
 
-Returns array of matches in the format of the built-in `exec`. If `regexp` is non-global, the returning array contains either one or zero elements.
+Returns array of matches in the format of the built-in `exec`. If `regexp` is non-global, the resulting array contains either one or zero elements.
 
 It is basically equivalent to the following snippet:
 

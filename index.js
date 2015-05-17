@@ -7,14 +7,12 @@ module.exports = exports = function (regexp, string) {
     regexp = this;
   }
 
-  var match;
+  var match, matches = [];
 
   if (!regexp.global) {
     match = regexp.exec(string);
     return match ? [match] : [];
   }
-
-  var matches = [];
 
   while (match = regexp.exec(string)) {
     matches.push(match);
