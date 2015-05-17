@@ -26,6 +26,7 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "^1.21.5",
+    "object.assign": "^2.0.1",
     "should": "^4.0.4"
   }
 }
