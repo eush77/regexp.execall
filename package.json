@@ -18,10 +18,22 @@
   "keywords": [
     "regex",
     "regexp",
+    "re",
     "regular",
     "expression",
     "exec",
-    "all"
+    "match",
+    "matches",
+    "execall",
+    "all",
+    "find",
+    "findall",
+    "immutable",
+    "string",
+    "str",
+    "multiple",
+    "many",
+    "global"
   ],
   "dependencies": {},
   "devDependencies": {
