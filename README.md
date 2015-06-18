@@ -23,7 +23,6 @@ execAll(/\w+/g, 'foo bar');
 
 ### execAll(regexp, string)
 
-If `execAll` is called in the context of a `RegExp`, it will use it as a `regexp`.
 
 Returns array of matches in the format of the built-in `exec`. If `regexp` is non-global, the resulting array contains either one or zero elements.
 
@@ -37,19 +36,6 @@ while ((match = regexp.exec(string)) != null) {
 }
 ```
 
-### execAll.extendRegExp()
-
-Equivalent to `RegExp.prototype.execAll = execAll`.
-
-Returns `execAll`.
-
-```js
-var execAll = require('regexp.execall').extendRegExp();
-
-/\w+/g.execAll('foo bar');
-//=> [ [ 'foo', index: 0, input: 'foo bar' ],
-//     [ 'bar', index: 4, input: 'foo bar' ] ]
-```
 
 ## Install
 
