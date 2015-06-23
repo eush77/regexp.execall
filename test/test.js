@@ -48,5 +48,13 @@ describe('for a global regexp', function () {
       index: 5,
       input: input
     })]);
+
+    execAll(/1?/g, input).should.eql([assign(['1'], {
+      index: 0,
+      input: input
+    }), assign([''], {
+      index: 1,
+      input: input
+    })]);
   });
 });

@@ -11,7 +11,7 @@ module.exports = function (regexp, string) {
 
   while (match = regexp.exec(string)) {
     matches.push(match);
-    if (match[0] == '' && match.index == string.length) {
+    if (match[0] == '') {
       break;
     }
   }
