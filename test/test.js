@@ -39,4 +39,14 @@ describe('for a global regexp', function () {
   it('should return an empty array if it couldn\'t match once', function () {
     execAll(/(x)(x)/g, input).should.eql([]);
   });
+
+  it('should never enter an infinite loop', function () {
+    execAll(/.*/g, input).should.eql([assign(['12345'], {
+      index: 0,
+      input: input
+    }), assign([''], {
+      index: 5,
+      input: input
+    })]);
+  });
 });
