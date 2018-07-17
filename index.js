@@ -1,18 +1,21 @@
 'use strict';
 
-
 module.exports = function (regexp, string) {
-  var match, matches = [];
+  if (!string) return [];
+
+  var match = regexp.exec(string);
+  if (!match) return [];
 
   if (!regexp.global) {
-    match = regexp.exec(string);
-    return match ? [match] : [];
+    return [match];
   }
 
+  var matches = [match];
   while (match = regexp.exec(string)) {
-    matches.push(match);
-    if (match[0] == '') {
-      break;
+    if (match[0] === '') {
+      regexp.lastIndex++;
+    } else {
+      matches.push(match);
     }
   }
 
