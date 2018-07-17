@@ -3,12 +3,14 @@
 module.exports = function (regexp, string) {
   if (!string) return [];
 
+  var match = regexp.exec(string);
+  if (!match) return [];
+
   if (!regexp.global) {
-    var match = regexp.exec(string);
-    return match ? [match] : [];
+    return [match];
   }
 
-  var matches = [];
+  var matches = [match];
   while (match = regexp.exec(string)) {
     if (match[0] === '') {
       regexp.lastIndex++;
