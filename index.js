@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = function (regexp, string) {
+  if (!string) return [];
+
   if (!regexp.global) {
     var match = regexp.exec(string);
     return match ? [match] : [];
