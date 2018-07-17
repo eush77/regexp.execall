@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = function (regexp, string) {
   var match, matches = [];
 
@@ -10,9 +9,10 @@ module.exports = function (regexp, string) {
   }
 
   while (match = regexp.exec(string)) {
-    matches.push(match);
-    if (match[0] == '') {
-      break;
+    if (match[0] === '') {
+      regexp.lastIndex++;
+    } else {
+      matches.push(match);
     }
   }
 
